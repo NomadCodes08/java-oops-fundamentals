@@ -10,11 +10,19 @@ abstract class Animal{
         return name;
     }
 
+    //eat() is a concrete method.
+
     void eat(){
         System.out.println(name + " is eating. ");
     }
 
+
+    //sound() is an abstract method.
     abstract void sound();
+
+    static String category(){
+        return "Animal Kingdom";
+    }
 }
 
 class Dog extends Animal{
@@ -25,6 +33,10 @@ class Dog extends Animal{
 
     void sound() {
         System.out.println( getName() + " barks!");
+    }
+
+    static String category(){
+        return "Animal";
     }
 }
 
@@ -50,10 +62,12 @@ public class AbstractionUsingAbstractClass {
         Animal dog = new Dog("Charlie");
         dog.eat();
         dog.sound();
+        System.out.println("Category: " + Dog.category());
 
         Animal cat = new Cat("Kitty");
         cat.eat();
         cat.sound();
+        System.out.println("Category: " + Cat.category());
     }
 
 }

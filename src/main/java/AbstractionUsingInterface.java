@@ -15,13 +15,21 @@ class CardPayment implements Payment{
     }
 }
 
+class PaymentService{
+
+    void processPayment( Payment payment){
+        payment.pay();
+    }
+
+}
+
 public class AbstractionUsingInterface {
 
     public static void main(String[] args) {
         Payment payment = new UPIPayment();
         payment.pay();
 
-        CardPayment cardPayment = new CardPayment();
-        cardPayment.pay();
+        PaymentService paymentService = new PaymentService();
+        paymentService.processPayment(new CardPayment());
     }
 }

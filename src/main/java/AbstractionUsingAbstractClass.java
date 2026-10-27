@@ -16,10 +16,11 @@ abstract class Animal{
         System.out.println(name + " is eating. ");
     }
 
-
+    // Abstract method: subclasses must implement it.
     //sound() is an abstract method.
     abstract void sound();
 
+    // Static method: belongs to the Animal class.
     static String category(){
         return "Animal Kingdom";
     }
